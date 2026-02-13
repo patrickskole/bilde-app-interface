@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Min Bilde-fikser</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 50px; }
+        form { background: #f0f0f0; padding: 20px; border-radius: 10px; display: inline-block; }
+    </style>
+</head>
+<body>
+    <h1>Last opp et bilde</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <br><br>
+        <button type="submit">Last opp og fiks bildet!</button>
+    </form>
+</body>
+</html>
