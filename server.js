@@ -21,9 +21,12 @@ app.post('/upload', upload.single('image'), async (req, res) => {
         const outputFilename = `fixed-${Date.now()}.jpg`;
 
         // Bruk Sharp til å endre størrelse
+        // ... inne i app.post ...
         await sharp(req.file.path)
-            .resize(300) // Endre bredden til 300px
+            .resize(300)
+            .grayscale() // <-- NYTT FILTER HER
             .toFile(`processed/${outputFilename}`);
+// ...
 
         // Send tilbake en lenke til bildet
         res.send(`
